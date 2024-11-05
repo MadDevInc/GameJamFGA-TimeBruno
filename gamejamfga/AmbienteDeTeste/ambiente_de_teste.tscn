@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://q2ak3htdbphi"]
+
+[ext_resource type="Texture2D" uid="uid://ban3y4d7aw2pk" path="res://AmbienteDeTeste/player_placeholder.png" id="1_c1ppj"]
+[ext_resource type="Texture2D" uid="uid://rlqehone5iln" path="res://AmbienteDeTeste/background_placeholder.png" id="2_wqers"]
+
+[node name="AmbienteDeTeste" type="Node2D"]
+texture_filter = 1
+
+[node name="BackgroundPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(320, 90)
+texture = ExtResource("2_wqers")
+
+[node name="PlayerPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(90, 140)
+texture = ExtResource("1_c1ppj")
