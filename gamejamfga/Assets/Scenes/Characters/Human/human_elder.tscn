@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4jjmimrms05r"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Characters/Human/human_elder.gd" id="1_55cng"]
+[ext_resource type="Texture2D" uid="uid://ban3y4d7aw2pk" path="res://Assets/Sprites/Characters/Human/player_placeholder.png" id="2_1heev"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exih0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1heev")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rmw2"]
+size = Vector2(10, 16)
+
+[node name="HumanElder" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_55cng")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_exih0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0rmw2")

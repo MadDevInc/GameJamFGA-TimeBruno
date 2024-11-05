@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnbjmnboyorgw"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Characters/Human/human_adult.gd" id="1_5yqfv"]
+[ext_resource type="Texture2D" uid="uid://ban3y4d7aw2pk" path="res://Assets/Sprites/Characters/Human/player_placeholder.png" id="1_vuwj0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32gp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vuwj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dbgh"]
+size = Vector2(10, 16)
+
+[node name="HumanAdult" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_5yqfv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_32gp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0dbgh")
