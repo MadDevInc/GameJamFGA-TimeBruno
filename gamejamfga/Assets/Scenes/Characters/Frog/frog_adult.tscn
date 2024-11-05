@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://u2qimkypwyel"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Characters/Frog/frog_adult.gd" id="1_32rgq"]
+[ext_resource type="Texture2D" uid="uid://yorlgggr4un0" path="res://Assets/Sprites/Characters/Frog/sapo-16x16.png" id="1_xatl0"]
+[ext_resource type="Texture2D" uid="uid://bf1gbe7br4gx1" path="res://Assets/Sprites/Characters/Frog/sapo-16x17.png" id="2_ghuxa"]
+[ext_resource type="Shader" path="res://Assets/Scenes/Characters/Frog/frog_adult.gdshader" id="4_2x486"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrtmj"]
+size = Vector2(16, 13)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0yfk"]
+shader = ExtResource("4_2x486")
+shader_parameter/height = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvnv8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xatl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ghuxa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FrogAdult" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_32rgq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_wrtmj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_r0yfk")
+sprite_frames = SubResource("SpriteFrames_wvnv8")
+frame_progress = 0.357717

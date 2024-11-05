@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Assets/Scenes/Characters/Human/human_baby.gd" id="1_1sufe"]
 [ext_resource type="Texture2D" uid="uid://ban3y4d7aw2pk" path="res://Assets/Sprites/Characters/Human/player_placeholder.png" id="1_4iyya"]
-[ext_resource type="Texture2D" uid="uid://p0f7qqy8y30b" path="res://Assets/Sprites/Characters/Baby/BEBE_sprite_Sheet.png" id="2_iw7ko"]
-[ext_resource type="Texture2D" uid="uid://561crgu4plr" path="res://Assets/Sprites/Characters/Baby/BEBE_sprite1.png" id="2_x0vn2"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Characters/Baby/BEBE_sprite_Sheet.png" id="2_iw7ko"]
+[ext_resource type="Texture2D" uid="uid://gsxutyg1d3da" path="res://Assets/Sprites/Characters/Baby/BEBE_sprite1.png" id="2_x0vn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pueox"]
 size = Vector2(10, 8)
