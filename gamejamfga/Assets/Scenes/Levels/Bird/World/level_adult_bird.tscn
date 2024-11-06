@@ -18,12 +18,13 @@ script = ExtResource("1_7vy8m")
 one_shot = true
 
 [node name="Layer1_Adult_Bird" parent="." instance=ExtResource("3_mtubj")]
-speed = 20
+speed = 0
 
 [node name="layer_2_bird" parent="." instance=ExtResource("4_iure7")]
-speed = 50
+speed = 0
 
 [node name="layer_3_bird" parent="." instance=ExtResource("5_chx5q")]
+speed = 0
 
 [node name="Adult_Bird" parent="." instance=ExtResource("1_rymqy")]
 position = Vector2(34, 34)

@@ -29,7 +29,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Adult_Bird" type="CharacterBody2D"]
+[node name="Adult_Bird" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 script = ExtResource("1_rcq4u")
 

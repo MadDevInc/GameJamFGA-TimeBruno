@@ -4,8 +4,27 @@ extends CharacterBody2D
 @export var gravity = 700.0
 @export var jump_strength = -200.0
 var dead = false
+var game_started = false
 
+
+	
 func _physics_process(delta):
+	
+	if not game_started:
+		if Input.is_action_just_pressed("ui_accept"):
+			
+			var layer1 = get_parent().get_node("Layer1_Adult_Bird")
+			layer1.speed = 20
+			var layer2 = get_parent().get_node("layer_2_bird")
+			layer2.speed = 50
+			var layer3 = get_parent().get_node("layer_3_bird")
+			layer3.speed = 100
+			
+			get_parent().get_node("Timer").start(1)
+			game_started = true
+			print (get_parent().get_node("Timer"))
+		 # Começa o jogo ao pressionar "ui_accept"
+		return 	
 	# Aplica a gravidade ao personagem
 	velocity.y += gravity * delta
 	
@@ -28,3 +47,6 @@ func kill():
 	layer3.speed = 0
 	
 	dead = true
+	
+	await get_tree().create_timer(4).timeout
+	get_tree().reload_current_scene()
