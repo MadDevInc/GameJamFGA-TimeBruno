@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://drh6c6285pgsg"]
+
+[ext_resource type="Texture2D" uid="uid://rlqehone5iln" path="res://AmbienteDeTeste/background_placeholder.png" id="1_yd318"]
+[ext_resource type="PackedScene" uid="uid://dg7bh1jsryoow" path="res://Assets/Scenes/Characters/Bird/Adult_Bird.tscn" id="2_0857n"]
+[ext_resource type="PackedScene" uid="uid://7d30d276upca" path="res://Assets/Scenes/Levels/Bird/Enemies/Enemie_bird.tscn" id="3_k048h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvmdn"]
+size = Vector2(640, 30)
+
+[node name="Teste_Passaro" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 322.0
+offset_bottom = 90.0
+color = Color(0, 1, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_top = 90.0
+offset_right = 322.0
+offset_bottom = 180.0
+color = Color(0, 0.2, 1, 1)
+
+[node name="BackgroundPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(320, 90)
+texture = ExtResource("1_yd318")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, 165)
+shape = SubResource("RectangleShape2D_qvmdn")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_0857n")]
+position = Vector2(38, 140)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_k048h")]
+position = Vector2(326, 157)

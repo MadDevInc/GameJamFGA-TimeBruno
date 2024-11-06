@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg7bh1jsryoow"]
+
+[ext_resource type="Texture2D" uid="uid://c4rk1r8s7klgd" path="res://Assets/Sprites/Characters/Chicken/adult_chicken.png" id="1_6rbdf"]
+[ext_resource type="Script" path="res://Adult-bird.gd" id="1_rcq4u"]
+[ext_resource type="Texture2D" uid="uid://cu8bb8d6wmuww" path="res://Assets/Sprites/Characters/Chicken/adult_chicken_jump.png" id="2_mrvu7"]
+[ext_resource type="Texture2D" uid="uid://cph07ow0g6ext" path="res://Assets/Sprites/Characters/Chicken/adult_chicken_move1.png" id="3_31u1v"]
+[ext_resource type="Texture2D" uid="uid://b6glt82tuvrmy" path="res://Assets/Sprites/Characters/Chicken/adult_chicken_move2.png" id="4_4s8h6"]
+[ext_resource type="Texture2D" uid="uid://cib5588wxra13" path="res://Assets/Sprites/Characters/Chicken/adult_chicken_move3.png" id="5_ju0ak"]
+[ext_resource type="Texture2D" uid="uid://pfqnmn66i303" path="res://Assets/Sprites/Characters/Chicken/adult_chicken_move4.png" id="6_o785f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otw0i"]
+size = Vector2(13, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rara"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6rbdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mrvu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_31u1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4s8h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ju0ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o785f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Adult_Bird" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_rcq4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_otw0i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8rara")
+frame_progress = 0.0211504
