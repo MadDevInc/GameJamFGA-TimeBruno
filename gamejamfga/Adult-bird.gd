@@ -11,6 +11,10 @@ func _physics_process(delta):
 	# Detecta o pulo ao pressionar a tecla de ação "ui_accept" (geralmente a barra de espaço)
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = jump_strength  # Aplica a força de pulo
+		$AnimatedSprite2D.play("flapy")
 
 	# Move o personagem no eixo Y
 	move_and_slide()
+	
+func kill():
+	get_tree().reload_current_scene()

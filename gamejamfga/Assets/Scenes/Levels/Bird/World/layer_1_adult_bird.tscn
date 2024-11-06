@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://db3ikmwuuao7e"]
+
+[ext_resource type="Texture2D" uid="uid://wn1s8p7ptruh" path="res://Assets/Sprites/Background/background_passaro/blue_sky_layer.png" id="1_t3hfj"]
+
+[node name="Layer1_Adult_Bird" type="Sprite2D"]
+texture = ExtResource("1_t3hfj")

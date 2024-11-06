@@ -16,3 +16,8 @@ func _process(delta):
 		#get_tree().reload_current_scene()
 	pass
 	self.global_position.x -= speed*delta
+
+
+func _on_body_entered(body):
+	pass # Replace with function body.
+	body.kill()

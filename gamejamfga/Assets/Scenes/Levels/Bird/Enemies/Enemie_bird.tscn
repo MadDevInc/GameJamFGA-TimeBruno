@@ -1,21 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://7d30d276upca"]
+[gd_scene load_steps=6 format=3 uid="uid://7d30d276upca"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/Enemies/Enemie_bird.gd" id="1_e7pvo"]
-[ext_resource type="Texture2D" uid="uid://c4rk1r8s7klgd" path="res://Assets/Sprites/Characters/Chicken/adult_chicken.png" id="1_idul7"]
-[ext_resource type="Texture2D" uid="uid://cph07ow0g6ext" path="res://Assets/Sprites/Characters/Chicken/adult_chicken_move1.png" id="2_b7u02"]
-[ext_resource type="Texture2D" uid="uid://b6glt82tuvrmy" path="res://Assets/Sprites/Characters/Chicken/adult_chicken_move2.png" id="3_nt508"]
+[ext_resource type="Texture2D" uid="uid://fwvs2wfque3c" path="res://Assets/Sprites/enemy_bird/enemy_bird1.png" id="2_wuh41"]
+[ext_resource type="Texture2D" uid="uid://du28mqclv3ktw" path="res://Assets/Sprites/enemy_bird/enemy_bird2.png" id="3_aph08"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0infd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_idul7")
+"texture": ExtResource("2_wuh41")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_b7u02")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_nt508")
+"texture": ExtResource("3_aph08")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1jim"]
-size = Vector2(13, 14)
+size = Vector2(16, 12)
 
 [node name="Enemie_Bird" type="Area2D"]
 texture_filter = 1
@@ -31,8 +27,11 @@ script = ExtResource("1_e7pvo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0infd")
-frame_progress = 0.0182329
+autoplay = "default"
+frame_progress = 0.79379
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_e1jim")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
