@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmex6opam37uo"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/layer_2_bird.gd" id="1_06fh6"]
+[ext_resource type="Texture2D" uid="uid://iqotvpipqtu0" path="res://Assets/Sprites/Background/background_passaro/tree_layer.png" id="2_oqt6f"]
+
+[node name="layer_2_bird" type="Node2D"]
+script = ExtResource("1_06fh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 90)
+texture = ExtResource("2_oqt6f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(420, 90)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_oqt6f")

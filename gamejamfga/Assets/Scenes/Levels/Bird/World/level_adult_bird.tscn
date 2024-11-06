@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgvd0jdc56f1j"]
+[gd_scene load_steps=6 format=3 uid="uid://cgvd0jdc56f1j"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/level_adult_bird.gd" id="1_7vy8m"]
 [ext_resource type="PackedScene" uid="uid://dg7bh1jsryoow" path="res://Assets/Scenes/Characters/Bird/Adult_Bird.tscn" id="1_rymqy"]
+[ext_resource type="PackedScene" uid="uid://db3ikmwuuao7e" path="res://Assets/Scenes/Levels/Bird/World/layer_1_adult_bird.tscn" id="3_mtubj"]
+[ext_resource type="PackedScene" uid="uid://dmex6opam37uo" path="res://Assets/Scenes/Levels/Bird/World/layer_2_bird.tscn" id="4_iure7"]
+[ext_resource type="PackedScene" uid="uid://7bgcf2pc5t56" path="res://Assets/Scenes/Levels/Bird/World/layer_3_bird.tscn" id="5_chx5q"]
 
 [node name="Level_Adult_Bird" type="Node2D"]
 script = ExtResource("1_7vy8m")
@@ -11,5 +14,13 @@ position = Vector2(9, -8)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Layer1_Adult_Bird" parent="." instance=ExtResource("3_mtubj")]
+speed = 20
+
+[node name="layer_2_bird" parent="." instance=ExtResource("4_iure7")]
+speed = 50
+
+[node name="layer_3_bird" parent="." instance=ExtResource("5_chx5q")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

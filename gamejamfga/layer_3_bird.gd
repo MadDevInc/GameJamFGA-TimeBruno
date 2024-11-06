@@ -11,7 +11,7 @@ func _process(delta):
 	pass
 	$Sprite2D.global_position.x -= speed * delta
 	$Sprite2D2.global_position.x -= speed * delta
-	if $Sprite2D.global_position.x <-430:
-		$Sprite2D.global_position.x = 569
-	if $Sprite2D2.global_position.x < -430:
-		$Sprite2D2.global_position.x = 569
+	if $Sprite2D.global_position.x <-299:
+		$Sprite2D.global_position.x = 899
+	if $Sprite2D2.global_position.x < -299:
+		$Sprite2D2.global_position.x = 899

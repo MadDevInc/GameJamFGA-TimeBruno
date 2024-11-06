@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://7bgcf2pc5t56"]
+
+[ext_resource type="Script" path="res://layer_3_bird.gd" id="1_u3bu5"]
+[ext_resource type="Texture2D" uid="uid://yql3jidcipxr" path="res://Assets/Sprites/Background/background_passaro/ground_layer.png" id="2_j21mj"]
+
+[node name="layer_3_bird" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_u3bu5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(300, 90)
+texture = ExtResource("2_j21mj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(900, 90)
+texture = ExtResource("2_j21mj")
