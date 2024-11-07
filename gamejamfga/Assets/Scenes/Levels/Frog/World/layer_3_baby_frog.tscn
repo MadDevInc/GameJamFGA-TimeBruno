@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdstvv6mnc2rs"]
+
+[ext_resource type="Texture2D" uid="uid://bkttrwwpjmmg1" path="res://Assets/Sprites/Background/BackGroundFrog/Girino/chao-0001.png" id="1_251fi"]
+
+[node name="layer3_baby-frog" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 90)
+texture = ExtResource("1_251fi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(750, 90)
+texture = ExtResource("1_251fi")
