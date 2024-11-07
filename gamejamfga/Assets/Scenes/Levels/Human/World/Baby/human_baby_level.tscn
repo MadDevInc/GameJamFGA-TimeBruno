@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://bieyatbwg371b"]
+
+[ext_resource type="Texture2D" uid="uid://dqxuw3mi4xmtu" path="res://Assets/Sprites/Background/BackgroundHumano/Tilemap.png" id="1_4td2c"]
+[ext_resource type="PackedScene" uid="uid://cillnb4xxxd0e" path="res://Assets/Scenes/Characters/Human/human_baby.tscn" id="2_hv5dk"]
+[ext_resource type="PackedScene" uid="uid://dxr7j27di3pvo" path="res://Assets/Scenes/Levels/Human/Obstacle/vapor.tscn" id="3_gxdam"]
+[ext_resource type="PackedScene" uid="uid://bf0xe17oef8kk" path="res://Assets/Scenes/Levels/Human/World/Baby/climb_area.tscn" id="4_ui10o"]
+[ext_resource type="FontFile" uid="uid://ds3qxrklwilpo" path="res://Assets/Fonts/PublicPixel.otf" id="5_pinml"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88354"]
+texture = ExtResource("1_4td2c")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -2, -8, -2, -8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_hiovk"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_88354")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16fmq"]
+size = Vector2(1, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_686ue"]
+size = Vector2(1, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lwlh"]
+size = Vector2(1, 96)
+
+[node name="HumanBabyLevel" type="Node2D"]
+texture_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -216.0
+offset_top = -420.0
+offset_right = 957.0
+offset_bottom = 174.0
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_hiovk")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65535, 65536, 0, 65537, 65536, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, -65538, 131072, 1, -2, 131072, 2, 65534, 131072, 3, -65537, 196608, 1, -1, 196608, 2, 65535, 196608, 3, -131072, 262144, 1, -65536, 262144, 2, 0, 262144, 3, -196608, 65536, 0, -131073, 65536, 0, -131074, 65536, 0, -131075, 65536, 0, -65539, 65536, 0, -3, 65536, 0, 65533, 65536, 0, 131069, 65536, 0, 131070, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, -65533, 65536, 0, -65534, 65536, 0, -131071, 65536, 0, -196607, 65536, 0, -65532, 65536, 0, -65531, 65536, 0, -65530, 65536, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, -131065, 131072, 1, -65529, 131072, 2, 7, 131072, 3, -131064, 196608, 1, -65528, 196608, 2, 8, 196608, 3, -131063, 262144, 1, -65527, 262144, 2, 9, 262144, 3, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 65546, 65536, 0, -65526, 65536, 0, -131062, 65536, 0, -196598, 65536, 0, -196599, 65536, 0, -196600, 65536, 0, -196601, 65536, 0, -196602, 65536, 0, -131066, 65536, 0, -65525, 65536, 0, -65524, 65536, 0, -65523, 65536, 0, -65522, 65536, 0, -65521, 65536, 0, -65520, 65536, 0, -65519, 65536, 0, 65547, 65536, 0, 65548, 65536, 0, 65549, 65536, 0, 65550, 65536, 0, 65551, 65536, 0, 65552, 65536, 0, 65553, 65536, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, -65518, 65536, 0, -65517, 65536, 0, -65516, 65536, 0, -65515, 65536, 0, -65514, 65536, 0, -65513, 65536, 0, -65512, 65536, 0, -65511, 65536, 0, -131047, 65536, 0, -196583, 65536, 0, 65554, 65536, 0, 65555, 65536, 0, 65556, 65536, 0, 65557, 65536, 0, 65558, 65536, 0, 65559, 65536, 0, 65560, 65536, 0, 65561, 65536, 0, 65562, 65536, 0, 65563, 65536, 0, 27, 65536, 0, -65509, 65536, 0, -131045, 65536, 0, 25, 0, 0, 24, 0, 0, 23, 0, 0, 22, 0, 0, 21, 0, 0, 20, 0, 0, 19, 0, 0, 18, 0, 0, 26, 131072, 0, -65510, 131072, 0, -131046, 131072, 0, -262119, 65536, 0, -262118, 65536, 0, -262117, 65536, 0, -262116, 65536, 0, -262115, 65536, 0, -262114, 65536, 0, -131044, 65536, 0, -131043, 65536, 0, -131042, 65536, 0, -327649, 131072, 1, -262113, 131072, 2, -196577, 131072, 3, -327648, 196608, 1, -262112, 196608, 2, -196576, 196608, 3, -327647, 262144, 1, -262111, 262144, 2, -196575, 262144, 3, -196582, 0, 0, -196581, 0, 0, -196580, 0, 0, -196579, 0, 0, -196578, 0, 0, -327650, 65536, 0, -393186, 65536, 0, -393185, 65536, 0, -393184, 65536, 0, -393183, 65536, 0, -393182, 65536, 0, -327646, 65536, 0, -262110, 65536, 0, -131041, 65536, 0, -131040, 65536, 0, -131039, 65536, 0, -131038, 65536, 0, -131037, 65536, 0, -262109, 65536, 0, -262108, 65536, 0, -262107, 65536, 0, -131036, 65536, 0, -131035, 65536, 0, -262106, 65536, 0, -262105, 65536, 0, -262104, 65536, 0, -262103, 65536, 0, -262102, 65536, 0, -262101, 65536, 0, -131034, 65536, 0, -131033, 65536, 0, -131032, 65536, 0, -131031, 65536, 0, -131030, 65536, 0, -131029, 65536, 0, -262100, 65536, 0, -262099, 65536, 0, -262098, 65536, 0, -131028, 65536, 0, -131027, 65536, 0, -131026, 65536, 0, -131025, 65536, 0, -131024, 65536, 0, -131023, 65536, 0, -196559, 65536, 0, -262095, 65536, 0, -327631, 65536, 0, -393167, 65536, 0, -458703, 65536, 0, -262097, 65536, 0, -327633, 65536, 0, -393169, 65536, 0, -458705, 65536, 0, -524241, 65536, 0, -196574, 0, 0, -196573, 0, 0, -196572, 0, 0, -196571, 0, 0, -196570, 0, 0, -196569, 0, 0, -196568, 0, 0, -196567, 0, 0, -196566, 0, 0, -196565, 0, 0, -196564, 0, 0, -196563, 0, 0, -196562, 0, 0, -196561, 0, 0, -524239, 65536, 0, -196560, 131072, 0, -262096, 131072, 0, -327632, 131072, 0, -393168, 131072, 0, -458704, 131072, 0, -524240, 131072, 0, -655313, 65536, 0, -589777, 65536, 0, -655312, 65536, 0, -655311, 65536, 0, -655310, 65536, 0, -720846, 65536, 0, -786382, 65536, 0, -851918, 65536, 0, -917454, 65536, 0, -524238, 65536, 0, -524237, 65536, 0, -524236, 65536, 0, -589772, 65536, 0, -655308, 65536, 0, -720844, 65536, 0, -786380, 65536, 0, -851916, 65536, 0, -917452, 65536, 0, -589776, 131072, 0, -589775, 131072, 0, -589774, 131072, 0, -589773, 131072, 0, -655309, 131072, 0, -720845, 131072, 0, -786381, 131072, 0, -851917, 131072, 0, -917453, 131072, 0, -982990, 65536, 0, -1048526, 65536, 0, -1048525, 65536, 0, -1048524, 65536, 0, -1048523, 65536, 0, -1048522, 65536, 0, -1048521, 65536, 0, -1048520, 65536, 0, -917451, 65536, 0, -917450, 65536, 0, -917449, 65536, 0, -917448, 65536, 0, -982989, 131072, 0, -982988, 131072, 0, -982987, 131072, 0, -982986, 131072, 0, -982985, 131072, 0, -982984, 131072, 0)
+
+[node name="HumanBaby" parent="." instance=ExtResource("2_hv5dk")]
+position = Vector2(-4, 9)
+
+[node name="Vapor" parent="." instance=ExtResource("3_gxdam")]
+position = Vector2(259, 9)
+
+[node name="Vapor2" parent="." instance=ExtResource("3_gxdam")]
+position = Vector2(611, -44)
+
+[node name="Vapor3" parent="." instance=ExtResource("3_gxdam")]
+position = Vector2(664, -44)
+
+[node name="Vapor4" parent="." instance=ExtResource("3_gxdam")]
+position = Vector2(717, -44)
+
+[node name="ClimbArea" parent="." instance=ExtResource("4_ui10o")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea"]
+position = Vector2(431.5, -8)
+shape = SubResource("RectangleShape2D_16fmq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ClimbArea"]
+position = Vector2(783.5, -80)
+shape = SubResource("RectangleShape2D_686ue")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ClimbArea"]
+position = Vector2(831.5, -176)
+shape = SubResource("RectangleShape2D_3lwlh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -61.0
+offset_top = -51.0
+offset_right = 43.0
+offset_bottom = -32.0
+theme_override_fonts/font = ExtResource("5_pinml")
+theme_override_font_sizes/font_size = 8
+text = "SEGURE ESPAÇO 
+PARA AGACHAR!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 209.0
+offset_top = -39.0
+offset_right = 313.0
+offset_bottom = -20.0
+theme_override_fonts/font = ExtResource("5_pinml")
+theme_override_font_sizes/font_size = 8
+text = "CUIDADO!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 323.0
+offset_top = -72.0
+offset_right = 523.0
+offset_bottom = -53.0
+theme_override_fonts/font = ExtResource("5_pinml")
+theme_override_font_sizes/font_size = 8
+text = "CONTINUE SEGURANDO ESPAÇO
+PARA ESCALAR!"
+horizontal_alignment = 1
+vertical_alignment = 1

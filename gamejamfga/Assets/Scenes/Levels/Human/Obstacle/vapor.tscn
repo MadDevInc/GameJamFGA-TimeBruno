@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxr7j27di3pvo"]
+
+[ext_resource type="Texture2D" uid="uid://dqxuw3mi4xmtu" path="res://Assets/Sprites/Background/BackgroundHumano/Tilemap.png" id="1_05uo0"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Human/Obstacle/vapor.gd" id="1_awut2"]
+[ext_resource type="Texture2D" uid="uid://d3s5ou23qw68h" path="res://Assets/Sprites/Enemys/enemy_baby/vapor_particle.png" id="1_kftme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u26q2"]
+size = Vector2(10, 45)
+
+[node name="Vapor" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_awut2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_kftme")
+direction = Vector2(0, 1)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.54
+initial_velocity_max = 40.54
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_05uo0")
+region_enabled = true
+region_rect = Rect2(16, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19.5)
+shape = SubResource("RectangleShape2D_u26q2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

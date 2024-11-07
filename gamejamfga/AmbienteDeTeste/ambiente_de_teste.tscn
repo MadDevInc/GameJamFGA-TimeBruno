@@ -1,27 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://q2ak3htdbphi"]
+[gd_scene load_steps=7 format=3 uid="uid://q2ak3htdbphi"]
 
-[ext_resource type="Texture2D" uid="uid://dqxuw3mi4xmtu" path="res://Assets/Sprites/Background/BackgroundHumano/Tilemap.png" id="2_hne8h"]
 [ext_resource type="Texture2D" uid="uid://rlqehone5iln" path="res://AmbienteDeTeste/background_placeholder.png" id="2_wqers"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Human/World/Baby/BabyClimbArea.gd" id="3_ane3e"]
+[ext_resource type="PackedScene" uid="uid://cillnb4xxxd0e" path="res://Assets/Scenes/Characters/Human/human_baby.tscn" id="4_7lcg3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxel7"]
 size = Vector2(640, 30)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88354"]
-texture = ExtResource("2_hne8h")
-0:0/0 = 0
-1:0/0 = 0
-2:1/0 = 0
-3:2/0 = 0
-4:3/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-4:2/0 = 0
-2:2/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_biuh3"]
-sources/0 = SubResource("TileSetAtlasSource_88354")
+physics_layer_0/collision_layer = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk3wg"]
+size = Vector2(2, 128)
 
 [node name="AmbienteDeTeste" type="Node2D"]
 texture_filter = 1
@@ -44,6 +34,7 @@ position = Vector2(320, 90)
 texture = ExtResource("2_wqers")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(320, 165)
@@ -51,6 +42,20 @@ shape = SubResource("RectangleShape2D_nxel7")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
+position = Vector2(1, 0)
 tile_set = SubResource("TileSet_biuh3")
 format = 2
-layer_0/tile_data = PackedInt32Array(262144, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 262150, 65536, 0, 262151, 65536, 0, 262152, 65536, 0, 262153, 65536, 0, 262154, 65536, 0, 262155, 65536, 0, 262156, 65536, 0, 262157, 65536, 0, 327680, 65536, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 393216, 65536, 0, 393217, 65536, 0, 393218, 65536, 0, 393219, 65536, 0, 393220, 65536, 0, 393221, 65536, 0, 393222, 65536, 0, 393223, 65536, 0, 393224, 65536, 0, 393225, 65536, 0, 393226, 65536, 0, 393227, 65536, 0, 393228, 65536, 0, 393229, 65536, 0, 393230, 65536, 0, 196623, 131072, 1, 262159, 131072, 2, 327695, 131072, 3, 196624, 196608, 1, 262160, 196608, 2, 327696, 196608, 3, 196625, 262144, 1, 262161, 262144, 2, 327697, 262144, 3, 262158, 65536, 0, 196622, 65536, 0, 131086, 65536, 0, 131087, 65536, 0, 131088, 65536, 0, 131089, 65536, 0, 393231, 65536, 0, 393232, 65536, 0, 393233, 65536, 0, 393234, 65536, 0, 327694, 0, 0, 131090, 65536, 0, 196626, 65536, 0, 262162, 65536, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 262169, 0, 0, 196633, 0, 0, 131097, 0, 0, -65511, 0, 0, 25, 0, 0, 65561, 0, 0, 393235, 65536, 0, 393236, 65536, 0, 393237, 65536, 0, 393238, 65536, 0, 393239, 65536, 0, 393240, 65536, 0, 393241, 65536, 0, 393242, 65536, 0, 327706, 65536, 0, 262170, 65536, 0, 196634, 65536, 0, 131098, 65536, 0, 65562, 65536, 0, 26, 65536, 0, -65510, 65536, 0, -131046, 65536, 0, -131048, 65536, 0, -65512, 65536, 0, 24, 65536, 0, 65560, 65536, 0, 131096, 65536, 0, 196632, 65536, 0, 262168, 65536, 0, 262167, 65536, 0, 262166, 65536, 0, 262163, 65536, 0, 262164, 65536, 0, 262165, 65536, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(151, 37)
+script = ExtResource("3_ane3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15, 64)
+shape = SubResource("RectangleShape2D_pk3wg")
+
+[node name="HumanBaby" parent="." instance=ExtResource("4_7lcg3")]
+position = Vector2(23, 88)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
