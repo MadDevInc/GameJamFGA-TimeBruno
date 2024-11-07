@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdstvv6mnc2rs"]
+[gd_scene load_steps=3 format=3 uid="uid://cdstvv6mnc2rs"]
 
 [ext_resource type="Texture2D" uid="uid://bkttrwwpjmmg1" path="res://Assets/Sprites/Background/BackGroundFrog/Girino/chao-0001.png" id="1_251fi"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/World/layer_3_baby_frog.gd" id="1_dv4nx"]
 
 [node name="layer3_baby-frog" type="Node2D"]
+script = ExtResource("1_dv4nx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(250, 90)
