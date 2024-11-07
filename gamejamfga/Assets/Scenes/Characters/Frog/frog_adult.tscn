@@ -37,7 +37,7 @@ shape = SubResource("RectangleShape2D_wrtmj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_r0yfk")
 sprite_frames = SubResource("SpriteFrames_wvnv8")
-frame_progress = 0.0524335
+frame_progress = 0.792385
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
