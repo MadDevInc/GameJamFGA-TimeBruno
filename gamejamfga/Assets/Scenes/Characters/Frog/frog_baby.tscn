@@ -1,17 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2j1l0086j3xy"]
+[gd_scene load_steps=14 format=3 uid="uid://b2j1l0086j3xy"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Characters/Frog/frog_baby.gd" id="1_s2waw"]
-[ext_resource type="Texture2D" uid="uid://b2jrbsv5wl1ci" path="res://Assets/Sprites/Characters/Frog/girino_placeholder.png" id="1_sytu2"]
+[ext_resource type="Texture2D" uid="uid://crxb6arp6p4an" path="res://Assets/Sprites/Characters/Frog/Girino-preto1.png" id="2_kbyfg"]
+[ext_resource type="Texture2D" uid="uid://dydo4qo3gng05" path="res://Assets/Sprites/Characters/Frog/Girino-preto2.png" id="3_f6te6"]
+[ext_resource type="Texture2D" uid="uid://ctc8vythngd0e" path="res://Assets/Sprites/Characters/Frog/Girino-preto3.png" id="4_vxe04"]
+[ext_resource type="Texture2D" uid="uid://cuerh5yc2f3u4" path="res://Assets/Sprites/Characters/Frog/Girino-preto4.png" id="5_3bysl"]
+[ext_resource type="Texture2D" uid="uid://dm06ojpbujnxj" path="res://Assets/Sprites/Characters/Frog/Girino-preto5.png" id="6_77tqp"]
+[ext_resource type="Texture2D" uid="uid://ue5435wa0cwf" path="res://Assets/Sprites/Characters/Frog/Girino-preto6.png" id="7_2b1b4"]
+[ext_resource type="Texture2D" uid="uid://dyfei7dxqavqh" path="res://Assets/Sprites/Characters/Frog/Girino-preto7.png" id="8_ssdp4"]
+[ext_resource type="Texture2D" uid="uid://co1yqlrag2ug2" path="res://Assets/Sprites/Characters/Frog/Girino-preto8.png" id="9_up1mw"]
+[ext_resource type="Texture2D" uid="uid://ndtl3frnl383" path="res://Assets/Sprites/Characters/Frog/Girino-preto9.png" id="10_8q4vd"]
+[ext_resource type="Texture2D" uid="uid://cshr5dcidpp47" path="res://Assets/Sprites/Characters/Frog/Girino-preto10.png" id="11_5id2p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xin81"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_sytu2")
+"texture": ExtResource("2_kbyfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f6te6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vxe04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3bysl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_77tqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2b1b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ssdp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_up1mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8q4vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5id2p")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00c3y"]
@@ -22,10 +58,13 @@ texture_filter = 1
 script = ExtResource("1_s2waw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(20, 0)
 sprite_frames = SubResource("SpriteFrames_xin81")
+autoplay = "default"
+frame_progress = 0.894229
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(20, 0)
 shape = SubResource("RectangleShape2D_00c3y")
 
 [node name="Label" type="Label" parent="."]
