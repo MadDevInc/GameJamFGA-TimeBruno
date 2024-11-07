@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dnbp7c5qrdweq"]
 
-[ext_resource type="Texture2D" uid="uid://ikxq4ux173tt" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="1_jfscc"]
+[ext_resource type="Texture2D" uid="uid://btf0j4m5uxt1m" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="1_jfscc"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/World_Old_frog/old_frog_level.gd" id="1_x864m"]
 [ext_resource type="PackedScene" uid="uid://u2qimkypwyel" path="res://Assets/Scenes/Characters/Frog/frog_adult.tscn" id="2_u4nv3"]
 [ext_resource type="Texture2D" uid="uid://hdrgjmtdjtey" path="res://Assets/Sprites/Background/BackGroundFrog/TileMap.png" id="3_eaes1"]

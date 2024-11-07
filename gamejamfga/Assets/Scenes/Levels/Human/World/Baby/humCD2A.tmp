@@ -159,9 +159,3 @@ vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1208, -368)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 1207.0
-offset_top = -482.0
-offset_right = 1209.0
-offset_bottom = 18.0
