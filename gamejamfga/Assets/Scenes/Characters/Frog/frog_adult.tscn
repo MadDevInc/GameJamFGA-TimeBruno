@@ -6,7 +6,7 @@
 [ext_resource type="Shader" path="res://Assets/Scenes/Characters/Frog/frog_adult.gdshader" id="4_2x486"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrtmj"]
-size = Vector2(16, 13)
+size = Vector2(16, 16)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0yfk"]
 shader = ExtResource("4_2x486")
@@ -31,10 +31,9 @@ texture_filter = 1
 script = ExtResource("1_32rgq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_wrtmj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_r0yfk")
 sprite_frames = SubResource("SpriteFrames_wvnv8")
-frame_progress = 0.357717
+frame_progress = 0.0675406
