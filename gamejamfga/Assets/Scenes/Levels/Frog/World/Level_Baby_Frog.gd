@@ -1,5 +1,5 @@
 extends Node2D
-var enemy_scene = load("res://Assets/Scenes/Levels/Frog/Enemies/node_2d.tscn")
+var enemy_scene = load("res://Assets/Scenes/Levels/Frog/Enemies/Enemie_frog.tscn")
 var spawn_delay = 1.0
 
 

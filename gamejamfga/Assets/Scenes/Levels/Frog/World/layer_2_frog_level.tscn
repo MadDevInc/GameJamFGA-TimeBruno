@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://div3qc1ol0hei"]
+
+[ext_resource type="Texture2D" uid="uid://dg2245ojxtlco" path="res://Assets/Sprites/Background/BackGroundFrog/Girino/Sprite-0001.png" id="1_le4r7"]
+
+[node name="layer2_bird_level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 90)
+texture = ExtResource("1_le4r7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]

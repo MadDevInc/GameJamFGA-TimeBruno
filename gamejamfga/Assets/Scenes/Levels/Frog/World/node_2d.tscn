@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdiacv0ogx5wn"]
+[gd_scene load_steps=5 format=3 uid="uid://bdiacv0ogx5wn"]
 
 [ext_resource type="PackedScene" uid="uid://b2j1l0086j3xy" path="res://Assets/Scenes/Characters/Frog/frog_baby.tscn" id="1_hnbw8"]
-[ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/Level_Baby_Frog.gd" id="1_nivis"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/World/Level_Baby_Frog.gd" id="1_nivis"]
+[ext_resource type="PackedScene" uid="uid://duvx7ot7etm88" path="res://Assets/Scenes/Levels/Frog/World/layer_1_baby_frog_level.tscn" id="2_pvika"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lpnf"]
 size = Vector2(25, 10)
@@ -11,6 +12,8 @@ script = ExtResource("1_nivis")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="layer1-baby_frog_level" parent="." instance=ExtResource("2_pvika")]
 
 [node name="FrogBaby" parent="." groups=["player"] instance=ExtResource("1_hnbw8")]
 position = Vector2(8, 95)
