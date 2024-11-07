@@ -17,7 +17,6 @@ func set_climbing(value : bool):
 		is_climbing = false
 
 func _physics_process(delta: float) -> void:
-	$Camera2D.global_position = lerp($Camera2D.global_position, self.global_position, 0.01)
 	if not is_on_floor():
 		velocity.y += 980 * delta
 #implementa o crouch
@@ -68,4 +67,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func kill():
-	assert(false, "IMPLEMENTE O KILL DO BEBE")
+	get_tree().reload_current_scene()
