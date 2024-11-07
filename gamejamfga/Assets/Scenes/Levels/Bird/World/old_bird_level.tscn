@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://r02o5ecv1bx3"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/old_bird_level.gd" id="1_oxtfa"]
+[ext_resource type="PackedScene" uid="uid://db3ikmwuuao7e" path="res://Assets/Scenes/Levels/Bird/World/layer_1_adult_bird.tscn" id="2_oiy14"]
+[ext_resource type="PackedScene" uid="uid://dmex6opam37uo" path="res://Assets/Scenes/Levels/Bird/World/layer_2_bird.tscn" id="3_t8i3s"]
+[ext_resource type="PackedScene" uid="uid://7bgcf2pc5t56" path="res://Assets/Scenes/Levels/Bird/World/layer_3_bird.tscn" id="4_vhh4f"]
+[ext_resource type="PackedScene" uid="uid://dg7bh1jsryoow" path="res://Assets/Scenes/Characters/Bird/Adult_Bird.tscn" id="5_ucatv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro66j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08nse"]
+size = Vector2(42, 20)
+
+[node name="Old_Bird_Level" type="Node2D"]
+script = ExtResource("1_oxtfa")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Layer1_Adult_Bird" parent="." instance=ExtResource("2_oiy14")]
+speed = 0
+
+[node name="layer_2_bird" parent="." instance=ExtResource("3_t8i3s")]
+speed = 0
+
+[node name="layer_3_bird" parent="." instance=ExtResource("4_vhh4f")]
+speed = 0
+
+[node name="Adult_Bird" parent="." instance=ExtResource("5_ucatv")]
+position = Vector2(34, 34)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(36, -10)
+shape = SubResource("RectangleShape2D_ro66j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(43, 190)
+shape = SubResource("RectangleShape2D_08nse")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
