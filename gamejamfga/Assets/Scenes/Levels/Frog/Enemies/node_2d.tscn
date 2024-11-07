@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://b3bhcxfcxjv7c"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/Enemies/Enemie_frog.gd" id="1_0g50u"]
+[ext_resource type="Texture2D" uid="uid://c48fph533k2hj" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_dory1.png" id="1_kw5kh"]
+[ext_resource type="Texture2D" uid="uid://dw3w2l71y1ink" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_dory2.png" id="2_7bshv"]
+[ext_resource type="Texture2D" uid="uid://cg4ujkhh0aglm" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_dory3.png" id="3_b4fl2"]
+[ext_resource type="Texture2D" uid="uid://dkkdgje2omeds" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_nemo1.png" id="4_ssgo6"]
+[ext_resource type="Texture2D" uid="uid://6mhuyyapkstr" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_nemo2.png" id="5_tqd31"]
+[ext_resource type="Texture2D" uid="uid://2k4e12crx8ok" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_nemo3.png" id="6_v035p"]
+[ext_resource type="Texture2D" uid="uid://dkc61uk1hyot2" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_amarelo1.png" id="7_8ob2y"]
+[ext_resource type="Texture2D" uid="uid://b7ksxj88ot01c" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_amarelo2.png" id="8_8l84f"]
+[ext_resource type="Texture2D" uid="uid://cga58k60rb387" path="res://Assets/Sprites/Enemys/enemy_frog/peixe_amarelo3.png" id="9_bti0v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xa816"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kw5kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7bshv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b4fl2")
+}],
+"loop": true,
+"name": &"Dory",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ssgo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tqd31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v035p")
+}],
+"loop": true,
+"name": &"Nemo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8ob2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8l84f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bti0v")
+}],
+"loop": true,
+"name": &"Peixe-laranja",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6hn7"]
+size = Vector2(14, 12)
+
+[node name="Enemie_frog" type="Area2D"]
+script = ExtResource("1_0g50u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xa816")
+animation = &"Dory"
+frame_progress = 0.121851
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o6hn7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

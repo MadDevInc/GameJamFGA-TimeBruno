@@ -22,7 +22,7 @@ func _physics_process(delta):
 			
 			get_parent().get_node("Timer").start(1)
 			game_started = true
-			print (get_parent().get_node("Timer"))
+
 		 # Começa o jogo ao pressionar "ui_accept"
 		return 	
 	# Aplica a gravidade ao personagem
