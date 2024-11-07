@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://dnbp7c5qrdweq"]
+
+[ext_resource type="Texture2D" uid="uid://ikxq4ux173tt" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="1_jfscc"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/World_Old_frog/old_frog_level.gd" id="1_x864m"]
+[ext_resource type="PackedScene" uid="uid://u2qimkypwyel" path="res://Assets/Scenes/Characters/Frog/frog_adult.tscn" id="2_u4nv3"]
+[ext_resource type="Texture2D" uid="uid://hdrgjmtdjtey" path="res://Assets/Sprites/Background/BackGroundFrog/TileMap.png" id="3_eaes1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5ia7"]
+size = Vector2(321, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1a2p"]
+size = Vector2(33.5, 830)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq4xg"]
+size = Vector2(40, 841)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk77u"]
+size = Vector2(380, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2778"]
+texture = ExtResource("3_eaes1")
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+3:4/0 = 0
+3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:4/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_84y21"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_k2778")
+
+[node name="Old_Frog_level" type="Node2D"]
+script = ExtResource("1_x864m")
+
+[node name="BlueSkyLayer" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(162, -393)
+scale = Vector2(1, 0.8)
+texture = ExtResource("1_jfscc")
+
+[node name="FrogAdult" parent="." instance=ExtResource("2_u4nv3")]
+position = Vector2(170, -667)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(160, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_d5ia7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(178, -418)
+shape = SubResource("RectangleShape2D_u1a2p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-179, -414)
+shape = SubResource("RectangleShape2D_oq4xg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(24, -818)
+shape = SubResource("RectangleShape2D_tk77u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 0)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_84y21")
+format = 2
+layer_0/tile_data = PackedInt32Array(-2228224, 0, 1, -2228223, 65536, 1, -2162687, 65536, 2, -2162688, 0, 2, -2686966, 65536, 1, -2686965, 65536, 1, -2686964, 131072, 1, -2686968, 0, 1, -2686967, 65536, 1, -2031609, 65536, 1, -2031608, 65536, 1, -2031607, 65536, 1, -1966072, 65536, 2, -1966071, 65536, 2, -1966073, 65536, 2, -2031606, 131072, 1, -1966070, 131072, 2, -1638381, 131072, 1, -1638382, 65536, 1, -1441777, 65536, 1, -1441778, 65536, 1, -917504, 0, 1, -327672, 65536, 1, -327671, 65536, 1, -1048567, 65536, 1, -1048566, 65536, 1)
