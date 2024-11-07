@@ -16,12 +16,23 @@ func set_on_water(value : bool):
 	else:
 		is_on_water = false
 func _ready():
-	get_parent().get_node("Timer").start(1)
-	game_started = true
+	pass
+	
 	
 func _physics_process(delta: float) -> void:
 	
-
+	if not game_started:
+		if Input.is_action_just_pressed("ui_accept"):
+			
+			var layer1 = get_parent().get_node("layer1-baby_frog_level")
+			layer1.speed = 20
+			var layer2 = get_parent().get_node("layer2_frog_level")
+			layer2.speed = 50
+			var layer3 = get_parent().get_node("layer3_baby-frog")
+			layer3.speed = 100
+			get_parent().get_node("Timer").start(1)
+			game_started = true
+			
 	if global_position.y > 90 and dead == false:
 		if Input.is_action_pressed("ui_accept"):
 			if velocity.y < SWIM_VELOCITY:
@@ -35,13 +46,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func kill():
-	#get_tree().reload_current_scene()
-	#var layer1 = get_parent().get_node("Layer1_Adult_Bird")
-	#layer1.speed = 0
-	#var layer2 = get_parent().get_node("layer_2_bird")
-	#layer2.speed = 0
-	#var layer3 = get_parent().get_node("layer_3_bird")
-	#layer3.speed = 0
+	
+	var layer1 = get_parent().get_node("layer1-baby_frog_level")
+	layer1.speed = 0
+	var layer2 = get_parent().get_node("layer2_frog_level")
+	layer2.speed = 0
+	var layer3 = get_parent().get_node("layer3_baby-frog")
+	layer3.speed = 0
 	
 	dead = true
 	

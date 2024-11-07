@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdiacv0ogx5wn"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/World/Level_Baby_Frog.gd" id="1_0getl"]
+[ext_resource type="PackedScene" uid="uid://duvx7ot7etm88" path="res://Assets/Scenes/Levels/Frog/World/layer_1_baby_frog_level.tscn" id="2_3lrwg"]
+[ext_resource type="PackedScene" uid="uid://div3qc1ol0hei" path="res://Assets/Scenes/Levels/Frog/World/layer_2_frog_level.tscn" id="3_pnf8y"]
+[ext_resource type="PackedScene" uid="uid://cdstvv6mnc2rs" path="res://Assets/Scenes/Levels/Frog/World/layer_3_baby_frog.tscn" id="4_ud8yd"]
+[ext_resource type="PackedScene" uid="uid://b2j1l0086j3xy" path="res://Assets/Scenes/Characters/Frog/frog_baby.tscn" id="5_71kfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lpnf"]
+size = Vector2(25, 10)
+
+[node name="Level_Baby_Frog" type="Node2D"]
+script = ExtResource("1_0getl")
+metadata/_edit_horizontal_guides_ = [-83.0]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="layer1-baby_frog_level" parent="." instance=ExtResource("2_3lrwg")]
+speed = 0
+
+[node name="layer2_frog_level" parent="." instance=ExtResource("3_pnf8y")]
+speed = 0
+
+[node name="layer3_baby-frog" parent="." instance=ExtResource("4_ud8yd")]
+speed = 0
+
+[node name="FrogBaby" parent="." groups=["player"] instance=ExtResource("5_71kfd")]
+position = Vector2(8, 95)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(29, 185)
+shape = SubResource("RectangleShape2D_1lpnf")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

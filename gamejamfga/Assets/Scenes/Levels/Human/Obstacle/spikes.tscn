@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://crvpnn34eqgch"]
+
+[ext_resource type="Texture2D" uid="uid://dqxuw3mi4xmtu" path="res://Assets/Sprites/Background/BackgroundHumano/Tilemap.png" id="1_4ouar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcsvi"]
+size = Vector2(16, 6)
+
+[node name="Spikes" type="Area2D"]
+texture_filter = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_kcsvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4ouar")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)

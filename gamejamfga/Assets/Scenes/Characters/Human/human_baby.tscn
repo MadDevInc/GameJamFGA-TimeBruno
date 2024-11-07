@@ -103,8 +103,6 @@ sprite_frames = SubResource("SpriteFrames_n2y2o")
 animation = &"climb"
 frame_progress = 0.861518
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_qxyh4")

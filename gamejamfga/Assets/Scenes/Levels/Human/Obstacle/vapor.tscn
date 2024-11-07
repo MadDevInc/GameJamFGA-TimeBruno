@@ -30,8 +30,7 @@ position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_u26q2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+wait_time = 2.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
