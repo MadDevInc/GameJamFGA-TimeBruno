@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = SPEED * direction * charge
 		charge = 0
 
-	$AnimatedSprite2D.material.set_shader_parameter("height", charge)
+	if charge != 1.0:
+		$AnimatedSprite2D.material.set_shader_parameter("height", charge)
 
 	move_and_slide()

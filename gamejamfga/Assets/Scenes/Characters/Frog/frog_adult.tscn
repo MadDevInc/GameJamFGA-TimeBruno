@@ -11,6 +11,7 @@ size = Vector2(16, 16)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r0yfk"]
 shader = ExtResource("4_2x486")
 shader_parameter/height = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wvnv8"]
 animations = [{
@@ -36,4 +37,10 @@ shape = SubResource("RectangleShape2D_wrtmj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_r0yfk")
 sprite_frames = SubResource("SpriteFrames_wvnv8")
-frame_progress = 0.0675406
+frame_progress = 0.0524335
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.25098, 0, 1)

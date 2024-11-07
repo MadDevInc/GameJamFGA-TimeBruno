@@ -1,40 +1,56 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6jatgbepg0q6"]
+[gd_scene load_steps=17 format=3 uid="uid://b6jatgbepg0q6"]
 
 [ext_resource type="Script" path="res://AmbienteTestefrog/teste_frog.gd" id="1_4ckeo"]
 [ext_resource type="PackedScene" uid="uid://u2qimkypwyel" path="res://Assets/Scenes/Characters/Frog/frog_adult.tscn" id="1_hs8cy"]
-[ext_resource type="Texture2D" uid="uid://wn1s8p7ptruh" path="res://Assets/Sprites/Background/background_passaro/blue_sky_layer.png" id="3_58qaa"]
+[ext_resource type="Texture2D" uid="uid://ikxq4ux173tt" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="2_cd642"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckp40"]
 size = Vector2(321, 15.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyi76"]
-size = Vector2(33.5, 486)
+size = Vector2(33.5, 830)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qj2kt"]
-size = Vector2(20, 476)
+size = Vector2(40, 841)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkotm"]
-size = Vector2(20, 3.5)
+size = Vector2(77, 6.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdedi"]
-size = Vector2(20, 6)
+size = Vector2(86, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kyj4"]
-size = Vector2(28, 5.375)
+size = Vector2(88, 8.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8x1"]
-size = Vector2(24, 7)
+size = Vector2(38, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bki4"]
+size = Vector2(20, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb2q0"]
+size = Vector2(137, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52v2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x5kp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uo8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boe4r"]
+size = Vector2(72, 7)
 
 [node name="TesteFrog" type="Node2D"]
 script = ExtResource("1_4ckeo")
 
 [node name="BlueSkyLayer" type="Sprite2D" parent="."]
-position = Vector2(169, -210)
-scale = Vector2(1, 2.56667)
-texture = ExtResource("3_58qaa")
+texture_filter = 1
+position = Vector2(162, -393)
+scale = Vector2(1, 0.8)
+texture = ExtResource("2_cd642")
 
 [node name="FrogAdult" parent="." instance=ExtResource("1_hs8cy")]
-position = Vector2(160, -130)
+position = Vector2(187, -506)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(160, 16)
@@ -43,28 +59,52 @@ position = Vector2(160, 16)
 shape = SubResource("RectangleShape2D_ckp40")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(177, -247)
+position = Vector2(178, -418)
 shape = SubResource("RectangleShape2D_cyi76")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-169, -230)
+position = Vector2(-179, -414)
 shape = SubResource("RectangleShape2D_qj2kt")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-74, -45)
+position = Vector2(-102.5, -43.375)
 shape = SubResource("RectangleShape2D_rkotm")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(85, -66)
+position = Vector2(118, -66)
 shape = SubResource("RectangleShape2D_wdedi")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-84, -133)
+position = Vector2(-114, -131.344)
 shape = SubResource("RectangleShape2D_6kyj4")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(105, -317)
+position = Vector2(56, -216)
 shape = SubResource("RectangleShape2D_nb8x1")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-131, -283)
+shape = SubResource("RectangleShape2D_1bki4")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(91.5, -366.5)
+shape = SubResource("RectangleShape2D_cb2q0")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(118, -400)
+shape = SubResource("RectangleShape2D_52v2a")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(28, -493)
+shape = SubResource("RectangleShape2D_0x5kp")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-147, -546)
+shape = SubResource("RectangleShape2D_5uo8t")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(10, -667)
+shape = SubResource("RectangleShape2D_boe4r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 0)
