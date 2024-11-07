@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = true
 		direction = -1
 
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down") and is_on_floor():
 		if charge_direction == 1:
 			if charge < 1:
 				charge += 0.04
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				charge_direction = 1
 
-	if Input.is_action_just_released("ui_down"):
+	if Input.is_action_just_released("ui_down") and is_on_floor():
 		velocity.y = JUMP_VELOCITY * charge
 		velocity.x = SPEED * direction * charge
 		charge = 0

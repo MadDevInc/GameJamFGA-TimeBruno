@@ -7,7 +7,7 @@ var is_crawling = false
 
 func _physics_process(delta: float) -> void:
 #implementa o crouch
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_accept"):
 		is_crawling = true
 		if $AnimatedSprite2D.animation == "stand":
 			$AnimatedSprite2D.play("crouch")
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 #movimentação do jogador
 	if Input.is_action_pressed("ui_right"):
 		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play("crawl")
+		#$AnimatedSprite2D.play("crawl")
 		if is_crawling:
 			$AnimatedSprite2D.play("crawl")
 			velocity.x = CRAWL_SPEED

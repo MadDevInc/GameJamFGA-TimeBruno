@@ -1,28 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnbjmnboyorgw"]
+[gd_scene load_steps=8 format=3 uid="uid://bnbjmnboyorgw"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Characters/Human/human_adult.gd" id="1_5yqfv"]
-[ext_resource type="Texture2D" uid="uid://ban3y4d7aw2pk" path="res://Assets/Sprites/Characters/Human/player_placeholder.png" id="1_vuwj0"]
+[ext_resource type="Texture2D" uid="uid://bdnxrigjawtws" path="res://Assets/Sprites/Characters/Adult/ADULT_WALKING1.png" id="2_5nj0p"]
+[ext_resource type="Texture2D" uid="uid://c0d345tmnisnp" path="res://Assets/Sprites/Characters/Adult/ADULT_WALKING2.png" id="3_8t0il"]
+[ext_resource type="Texture2D" uid="uid://dmtf1a45cw7f5" path="res://Assets/Sprites/Characters/Adult/ADULT_WALKING3.png" id="4_q3lhk"]
+[ext_resource type="Texture2D" uid="uid://d2r43ymlb6pkd" path="res://Assets/Sprites/Characters/Adult/ADULT_WALKING4.png" id="5_ojwxh"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_32gp8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dbgh"]
+size = Vector2(7, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0vug"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vuwj0")
+"texture": ExtResource("2_5nj0p")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5nj0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8t0il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q3lhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ojwxh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dbgh"]
-size = Vector2(10, 16)
 
 [node name="HumanAdult" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_5yqfv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_32gp8")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_0dbgh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t0vug")
+animation = &"walk"
+frame_progress = 0.607735

@@ -1,47 +1,32 @@
 [gd_scene load_steps=12 format=3 uid="uid://cillnb4xxxd0e"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Characters/Human/human_baby.gd" id="1_1sufe"]
-[ext_resource type="Texture2D" uid="uid://ban3y4d7aw2pk" path="res://Assets/Sprites/Characters/Human/player_placeholder.png" id="1_4iyya"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Characters/Baby/BEBE_sprite_Sheet.png" id="2_iw7ko"]
-[ext_resource type="Texture2D" uid="uid://gsxutyg1d3da" path="res://Assets/Sprites/Characters/Baby/BEBE_sprite1.png" id="2_x0vn2"]
+[ext_resource type="Texture2D" uid="uid://dvri0eauy6ank" path="res://Assets/Sprites/Characters/Baby - 2/engatiando/BEBE_sprite1.png" id="2_ddwxo"]
+[ext_resource type="Texture2D" uid="uid://dapo8gjujnhrm" path="res://Assets/Sprites/Characters/Baby - 2/engatiando/BEBE_sprite2.png" id="3_rs4sn"]
+[ext_resource type="Texture2D" uid="uid://ct25txg5uwrfk" path="res://Assets/Sprites/Characters/Baby - 2/engatiando/BEBE_sprite3.png" id="4_tijgr"]
+[ext_resource type="Texture2D" uid="uid://30yrk02imsbl" path="res://Assets/Sprites/Characters/Baby - 2/engatiando/BEBE_sprite4.png" id="5_oqqrf"]
+[ext_resource type="Texture2D" uid="uid://8ys2lddjeicy" path="res://Assets/Sprites/Characters/Baby - 2/andando_2/BEBE_ANDANDO1.png" id="6_hub7e"]
+[ext_resource type="Texture2D" uid="uid://bl1161kwh48md" path="res://Assets/Sprites/Characters/Baby - 2/andando_2/BEBE_ANDANDO2.png" id="7_vlij7"]
+[ext_resource type="Texture2D" uid="uid://ctybbmdkxx4m3" path="res://Assets/Sprites/Characters/Baby - 2/andando_2/BEBE_ANDANDO3.png" id="8_p35vj"]
+[ext_resource type="Texture2D" uid="uid://bnj8wgyb63mtb" path="res://Assets/Sprites/Characters/Baby - 2/andando_2/BEBE_ANDANDO4.png" id="9_4hxdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pueox"]
-size = Vector2(10, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bcfen"]
-atlas = ExtResource("2_iw7ko")
-region = Rect2(0, 0, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j281h"]
-atlas = ExtResource("2_iw7ko")
-region = Rect2(10, 0, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7yaly"]
-atlas = ExtResource("2_iw7ko")
-region = Rect2(20, 0, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlhsi"]
-atlas = ExtResource("2_iw7ko")
-region = Rect2(30, 0, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p4m5t"]
-atlas = ExtResource("2_x0vn2")
-region = Rect2(0, 0, 16, 16)
+size = Vector2(5, 11)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n2y2o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bcfen")
+"texture": ExtResource("2_ddwxo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j281h")
+"texture": ExtResource("3_rs4sn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7yaly")
+"texture": ExtResource("4_tijgr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nlhsi")
+"texture": ExtResource("5_oqqrf")
 }],
 "loop": true,
 "name": &"crawl",
@@ -49,15 +34,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p4m5t")
+"texture": ExtResource("2_ddwxo")
 }],
 "loop": true,
 "name": &"crouch",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4iyya")
+"texture": ExtResource("6_hub7e")
 }],
 "loop": true,
 "name": &"stand",
@@ -65,11 +50,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4iyya")
+"texture": ExtResource("6_hub7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vlij7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p35vj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4hxdh")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="HumanBaby" type="CharacterBody2D"]
@@ -77,9 +71,9 @@ texture_filter = 1
 script = ExtResource("1_1sufe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_pueox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n2y2o")
-animation = &"stand"
+animation = &"walk"
