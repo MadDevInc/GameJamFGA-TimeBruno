@@ -19,5 +19,6 @@ func _on_area_2d_body_entered(body):
 		$AnimationPlayer.play("transition")
 
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "transition":
-		get_tree().change_scene_to_file("")
+	pass
+	#if anim_name == "transition":
+		#get_tree().change_scene_to_file("")

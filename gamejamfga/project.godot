@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameJamFGA"
-run/main_scene="res://AmbienteDeTeste/ambiente_de_teste.tscn"
+run/main_scene="res://Assets/Menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 

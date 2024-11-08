@@ -22,3 +22,8 @@ func _on_human_elder_interact():
 	if is_in_elevator:
 		$HumanElder.stun()
 		$AnimationPlayer.play("ascend")
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "ascend":
+		get_tree().change_scene_to_file("res://Assets/Scenes/Levels/Bird/World/level_baby_bird.tscn")
+		

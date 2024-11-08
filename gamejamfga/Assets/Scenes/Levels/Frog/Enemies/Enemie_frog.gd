@@ -1,6 +1,6 @@
 extends Area2D
 var speed = 75
-var min_position = 77
+var min_position = 0
 var max_position = 173
 
 # Called when the node enters the scene tree for the first time.

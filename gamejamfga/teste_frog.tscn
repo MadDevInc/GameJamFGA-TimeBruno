@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://AmbienteTestefrog/teste_frog.gd" id="1_4ckeo"]
 [ext_resource type="PackedScene" uid="uid://u2qimkypwyel" path="res://Assets/Scenes/Characters/Frog/frog_adult.tscn" id="1_hs8cy"]
-[ext_resource type="Texture2D" uid="uid://btf0j4m5uxt1m" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="2_cd642"]
-[ext_resource type="Texture2D" uid="uid://cwryx8tqdobib" path="res://Assets/Sprites/Background/BackGroundFrog/block-0001.png" id="4_dacop"]
+[ext_resource type="Texture2D" uid="uid://ikxq4ux173tt" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="2_cd642"]
+[ext_resource type="Texture2D" uid="uid://ce75rj8pcdk14" path="res://Assets/Sprites/Background/BackGroundFrog/block-0001.png" id="4_dacop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckp40"]
 size = Vector2(321, 15.5)

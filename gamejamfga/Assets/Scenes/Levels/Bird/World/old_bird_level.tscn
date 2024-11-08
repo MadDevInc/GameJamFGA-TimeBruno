@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://r02o5ecv1bx3"]
+[gd_scene load_steps=16 format=3 uid="uid://r02o5ecv1bx3"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/old_bird_level.gd" id="1_oxtfa"]
 [ext_resource type="PackedScene" uid="uid://cjgasrsw4wvnc" path="res://Assets/Scenes/Levels/Bird/World/layer_1_old_bird.tscn" id="2_saidf"]
@@ -7,11 +7,112 @@
 [ext_resource type="PackedScene" uid="uid://7bgcf2pc5t56" path="res://Assets/Scenes/Levels/Bird/World/layer_3_bird.tscn" id="4_vhh4f"]
 [ext_resource type="PackedScene" uid="uid://dss76y2kx8lbu" path="res://Assets/Scenes/Levels/Bird/World/character_body_2d.tscn" id="6_uy1v8"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/Old_frog.gd" id="7_vu24a"]
+[ext_resource type="Texture2D" uid="uid://b3nn8pfbuam7i" path="res://Assets/Sprites/Characters/Death_ball/spirit-0001.png" id="8_bq70v"]
+[ext_resource type="Texture2D" uid="uid://8fy1xqoqgj2i" path="res://Assets/Sprites/Characters/Death_ball/spirit-0002.png" id="9_s47ov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ro66j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08nse"]
 size = Vector2(42, 20)
+
+[sub_resource type="Animation" id="Animation_8bi6j"]
+resource_name = "transition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(35, 94), Vector2(35, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_3316f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, 94)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ydcwk"]
+_data = {
+"RESET": SubResource("Animation_3316f"),
+"transition": SubResource("Animation_8bi6j")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8uye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bq70v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s47ov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Old_Bird_Level" type="Node2D"]
 script = ExtResource("1_oxtfa")
@@ -42,4 +143,21 @@ shape = SubResource("RectangleShape2D_ro66j")
 position = Vector2(43, 190)
 shape = SubResource("RectangleShape2D_08nse")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ydcwk")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(35, 94)
+sprite_frames = SubResource("SpriteFrames_f8uye")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

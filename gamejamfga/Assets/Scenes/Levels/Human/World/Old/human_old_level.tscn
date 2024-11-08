@@ -272,7 +272,7 @@ shape = SubResource("RectangleShape2D_y647w")
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_right = 304.0
+offset_right = 320.0
 offset_bottom = 180.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -283,5 +283,6 @@ sprite_frames = SubResource("SpriteFrames_uuppd")
 autoplay = "default"
 
 [connection signal="interact" from="HumanElder" to="." method="_on_human_elder_interact"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
