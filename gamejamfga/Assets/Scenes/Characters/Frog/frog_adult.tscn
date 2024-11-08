@@ -27,7 +27,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FrogAdult" type="CharacterBody2D"]
+[node name="FrogAdult" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 script = ExtResource("1_32rgq")
 

@@ -14,3 +14,6 @@ func _physics_process(delta):
 	if $Camera2D.global_position.y > top_limit:
 		$Camera2D.global_position.y = top_limit
 
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):
+		pass

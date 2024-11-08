@@ -47,7 +47,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Pinto" type="CharacterBody2D"]
+[node name="Pinto" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 script = ExtResource("1_u0hpb")
 

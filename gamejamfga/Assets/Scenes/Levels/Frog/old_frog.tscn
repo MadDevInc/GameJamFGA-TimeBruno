@@ -27,7 +27,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Old-frog" type="CharacterBody2D"]
+[node name="Old-frog" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 script = ExtResource("1_psktm")
 
