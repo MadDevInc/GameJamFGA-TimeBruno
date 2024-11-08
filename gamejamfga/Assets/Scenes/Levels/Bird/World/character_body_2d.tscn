@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dss76y2kx8lbu"]
+
+[ext_resource type="Texture2D" uid="uid://bulmwpxac8rvn" path="res://Assets/Sprites/Characters/Adult_bird/adult_bird1.png" id="1_8fau7"]
+[ext_resource type="Texture2D" uid="uid://c32mvv0qwa8br" path="res://Assets/Sprites/Characters/Adult_bird/adult_bird2.png" id="2_hu2na"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b8av"]
+size = Vector2(18, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4oddt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8fau7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hu2na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_8fau7")
+}],
+"loop": false,
+"name": &"flapy_old",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_4b8av")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_4oddt")
+animation = &"flapy_old"
+autoplay = "default"

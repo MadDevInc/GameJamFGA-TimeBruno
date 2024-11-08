@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://r02o5ecv1bx3"]
+[gd_scene load_steps=10 format=3 uid="uid://r02o5ecv1bx3"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/old_bird_level.gd" id="1_oxtfa"]
-[ext_resource type="PackedScene" uid="uid://db3ikmwuuao7e" path="res://Assets/Scenes/Levels/Bird/World/layer_1_adult_bird.tscn" id="2_oiy14"]
+[ext_resource type="PackedScene" uid="uid://cjgasrsw4wvnc" path="res://Assets/Scenes/Levels/Bird/World/layer_1_old_bird.tscn" id="2_saidf"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/layer_1_old_bird.gd" id="3_4tb7v"]
 [ext_resource type="PackedScene" uid="uid://dmex6opam37uo" path="res://Assets/Scenes/Levels/Bird/World/layer_2_bird.tscn" id="3_t8i3s"]
 [ext_resource type="PackedScene" uid="uid://7bgcf2pc5t56" path="res://Assets/Scenes/Levels/Bird/World/layer_3_bird.tscn" id="4_vhh4f"]
-[ext_resource type="PackedScene" uid="uid://dg7bh1jsryoow" path="res://Assets/Scenes/Characters/Bird/Adult_Bird.tscn" id="5_ucatv"]
+[ext_resource type="PackedScene" uid="uid://dss76y2kx8lbu" path="res://Assets/Scenes/Levels/Bird/World/character_body_2d.tscn" id="6_uy1v8"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/Bird/World/Old_frog.gd" id="7_vu24a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ro66j"]
 
@@ -17,8 +19,8 @@ script = ExtResource("1_oxtfa")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Layer1_Adult_Bird" parent="." instance=ExtResource("2_oiy14")]
-speed = 0
+[node name="layer1_old_bird" parent="." instance=ExtResource("2_saidf")]
+script = ExtResource("3_4tb7v")
 
 [node name="layer_2_bird" parent="." instance=ExtResource("3_t8i3s")]
 speed = 0
@@ -26,8 +28,9 @@ speed = 0
 [node name="layer_3_bird" parent="." instance=ExtResource("4_vhh4f")]
 speed = 0
 
-[node name="Adult_Bird" parent="." instance=ExtResource("5_ucatv")]
-position = Vector2(34, 34)
+[node name="Old_bird" parent="." groups=["player"] instance=ExtResource("6_uy1v8")]
+position = Vector2(35, 41)
+script = ExtResource("7_vu24a")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
