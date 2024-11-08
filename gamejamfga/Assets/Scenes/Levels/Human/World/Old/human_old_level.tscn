@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmw3sgftvf54d"]
+[gd_scene load_steps=17 format=3 uid="uid://cmw3sgftvf54d"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Human/World/Old/human_old_level.gd" id="1_rau4p"]
 [ext_resource type="Texture2D" uid="uid://dqxuw3mi4xmtu" path="res://Assets/Sprites/Background/BackgroundHumano/Tilemap.png" id="1_rslwf"]
 [ext_resource type="PackedScene" uid="uid://b4jjmimrms05r" path="res://Assets/Scenes/Characters/Human/human_elder.tscn" id="2_qwut4"]
 [ext_resource type="FontFile" uid="uid://ds3qxrklwilpo" path="res://Assets/Fonts/PublicPixel.otf" id="4_74wxv"]
 [ext_resource type="Texture2D" uid="uid://bsi218c37kdpr" path="res://Assets/Sprites/Background/BackgroundHumano/elevator.png" id="4_e2xjm"]
+[ext_resource type="Texture2D" uid="uid://b3nn8pfbuam7i" path="res://Assets/Sprites/Characters/Death_ball/spirit-0001.png" id="6_rtxg7"]
+[ext_resource type="Texture2D" uid="uid://8fy1xqoqgj2i" path="res://Assets/Sprites/Characters/Death_ball/spirit-0002.png" id="7_te4sj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dokxw"]
 texture = ExtResource("1_rslwf")
@@ -68,6 +70,57 @@ sources/0 = SubResource("TileSetAtlasSource_dokxw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0megj"]
 size = Vector2(64, 4)
 
+[sub_resource type="Animation" id="Animation_lds2s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(272, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(271, 24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_su5tc"]
 resource_name = "ascend"
 length = 10.0
@@ -95,32 +148,29 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_lds2s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5, 7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(272, 180)]
+"values": [Vector2(271, 24), Vector2(271, 11)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect3:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 5.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wiid4"]
@@ -134,6 +184,20 @@ size = Vector2(64, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y647w"]
 size = Vector2(2, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuppd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rtxg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_te4sj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="HumanOldLevel" type="Node2D"]
 texture_filter = 1
@@ -210,6 +274,13 @@ shape = SubResource("RectangleShape2D_y647w")
 modulate = Color(1, 1, 1, 0)
 offset_right = 304.0
 offset_bottom = 180.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(271, 24)
+sprite_frames = SubResource("SpriteFrames_uuppd")
+autoplay = "default"
 
 [connection signal="interact" from="HumanElder" to="." method="_on_human_elder_interact"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
