@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://tjnwpg8tf8uk"]
+
+[ext_resource type="Script" path="res://Old-frog.gd" id="1_psktm"]
+[ext_resource type="Shader" path="res://Assets/Scenes/Characters/Frog/frog_adult.gdshader" id="2_f4x2b"]
+[ext_resource type="Texture2D" uid="uid://dffvv5mlincv1" path="res://Assets/Sprites/Characters/Frog/sapo_idoso-16x16.png" id="2_n2ko0"]
+[ext_resource type="Texture2D" uid="uid://b4v7vnd1fgj2y" path="res://Assets/Sprites/Characters/Frog/sapo_idoso-16x17.png" id="3_rqafl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb62r"]
+size = Vector2(17, 15)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4p2gh"]
+shader = ExtResource("2_f4x2b")
+shader_parameter/height = null
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xsmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n2ko0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rqafl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Old-frog" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_psktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_gb62r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_4p2gh")
+sprite_frames = SubResource("SpriteFrames_5xsmx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.25098, 0, 1)

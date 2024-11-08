@@ -8,7 +8,7 @@ func _physics_process(delta):
 	#print($Camera2D.global_position.y)
 	#print($FrogAdult.global_position)
 	
-	$Camera2D.global_position.y = lerp($Camera2D.global_position.y, $FrogAdult.global_position.y +65, 0.15)
+	$Camera2D.global_position.y = lerp($Camera2D.global_position.y, $"Old-frog".global_position.y +65, 0.15)
 	if $Camera2D.global_position.y > bottom_limit:
 		$Camera2D.global_position.y = bottom_limit
 	if $Camera2D.global_position.y > top_limit:
