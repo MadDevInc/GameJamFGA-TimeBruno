@@ -8,16 +8,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 
-	print(GRAVITY)
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_FORCE
-	if Input.is_action_pressed("ui_accept") and velocity.y > 0:
-		$AnimatedSprite2D.play("jump")
-		velocity.x = 0
-		GRAVITY = 10
-	else:
-		GRAVITY = 400
-
 	if Input.is_action_pressed("ui_right"):
 		$AnimatedSprite2D.play("walk")
 		$AnimatedSprite2D.flip_h = false
@@ -29,5 +19,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		$AnimatedSprite2D.play("idle")
 		velocity.x = 0
+
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_FORCE
+	if Input.is_action_pressed("ui_accept") and velocity.y > 0:
+		$AnimatedSprite2D.play("jump")
+		GRAVITY = 10
+	else:
+		GRAVITY = 400
 
 	move_and_slide()
