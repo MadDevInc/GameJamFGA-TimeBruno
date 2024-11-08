@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://q2ak3htdbphi"]
+[gd_scene load_steps=5 format=3 uid="uid://q2ak3htdbphi"]
 
+[ext_resource type="PackedScene" uid="uid://qxa0wuhwv0ru" path="res://Assets/Scenes/Characters/Pinto/pinto.tscn" id="2_eev52"]
 [ext_resource type="Texture2D" uid="uid://rlqehone5iln" path="res://AmbienteDeTeste/background_placeholder.png" id="2_wqers"]
-[ext_resource type="PackedScene" uid="uid://b2j1l0086j3xy" path="res://Assets/Scenes/Characters/Frog/frog_baby.tscn" id="3_1jbla"]
-[ext_resource type="Script" path="res://Assets/Scenes/Levels/Human/World/Baby/BabyClimbArea.gd" id="3_ane3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxel7"]
 size = Vector2(640, 30)
@@ -10,18 +9,17 @@ size = Vector2(640, 30)
 [sub_resource type="TileSet" id="TileSet_biuh3"]
 physics_layer_0/collision_layer = 1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk3wg"]
-size = Vector2(2, 128)
-
 [node name="AmbienteDeTeste" type="Node2D"]
 texture_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 322.0
 offset_bottom = 90.0
 color = Color(0, 1, 1, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_top = 90.0
 offset_right = 322.0
 offset_bottom = 180.0
@@ -33,7 +31,7 @@ position = Vector2(320, 90)
 texture = ExtResource("2_wqers")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 73)
+position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(320, 165)
@@ -45,16 +43,4 @@ position = Vector2(1, 0)
 tile_set = SubResource("TileSet_biuh3")
 format = 2
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(151, 37)
-script = ExtResource("3_ane3e")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(15, 64)
-shape = SubResource("RectangleShape2D_pk3wg")
-
-[node name="FrogBaby" parent="." instance=ExtResource("3_1jbla")]
-position = Vector2(0, 100)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[node name="Pinto" parent="." instance=ExtResource("2_eev52")]

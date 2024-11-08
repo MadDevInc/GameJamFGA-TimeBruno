@@ -17,8 +17,7 @@ func set_on_water(value : bool):
 		is_on_water = false
 func _ready():
 	pass
-	
-	
+
 func _physics_process(delta: float) -> void:
 	
 	if not game_started:
@@ -33,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			get_parent().get_node("Timer").start(1)
 			game_started = true
 			
-	if global_position.y > 90 and dead == false:
+	if dead == false:
 		if Input.is_action_pressed("ui_accept"):
 			if velocity.y < SWIM_VELOCITY:
 				velocity.y += SWIM_ACCEL

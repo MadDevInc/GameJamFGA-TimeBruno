@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://tjnwpg8tf8uk"]
+[gd_scene load_steps=8 format=3 uid="uid://w750we35vl3a"]
 
 [ext_resource type="Script" path="res://Old-frog.gd" id="1_psktm"]
 [ext_resource type="Shader" path="res://Assets/Scenes/Characters/Frog/frog_adult.gdshader" id="2_f4x2b"]

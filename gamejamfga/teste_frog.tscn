@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6jatgbepg0q6"]
+[gd_scene load_steps=13 format=3 uid="uid://d30famx7lup7p"]
 
 [ext_resource type="Script" path="res://AmbienteTestefrog/teste_frog.gd" id="1_4ckeo"]
 [ext_resource type="PackedScene" uid="uid://u2qimkypwyel" path="res://Assets/Scenes/Characters/Frog/frog_adult.tscn" id="1_hs8cy"]
-[ext_resource type="Texture2D" uid="uid://ikxq4ux173tt" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="2_cd642"]
-[ext_resource type="Texture2D" uid="uid://hdrgjmtdjtey" path="res://Assets/Sprites/Background/BackGroundFrog/TileMap.png" id="4_4ag57"]
+[ext_resource type="Texture2D" uid="uid://btf0j4m5uxt1m" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="2_cd642"]
+[ext_resource type="Texture2D" uid="uid://cwryx8tqdobib" path="res://Assets/Sprites/Background/BackGroundFrog/block-0001.png" id="4_dacop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckp40"]
 size = Vector2(321, 15.5)
@@ -14,36 +14,25 @@ size = Vector2(33.5, 830)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qj2kt"]
 size = Vector2(40, 841)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46y4t"]
-texture = ExtResource("4_4ag57")
-1:0/0 = 0
-4:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-4:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-1:3/0 = 0
-3:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-3:4/0 = 0
-0:5/0 = 0
-2:5/0 = 0
-4:5/0 = 0
-0:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_giqm7"]
+size = Vector2(326.5, 20)
 
-[sub_resource type="TileSet" id="TileSet_slj5m"]
-sources/0 = SubResource("TileSetAtlasSource_46y4t")
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_adm2u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btscc"]
+texture = ExtResource("4_dacop")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ge6g8"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_adm2u")
+sources/0 = SubResource("TileSetAtlasSource_btscc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmbvm"]
+size = Vector2(80, 16)
 
 [node name="TesteFrog" type="Node2D"]
 script = ExtResource("1_4ckeo")
@@ -55,7 +44,7 @@ scale = Vector2(1, 0.8)
 texture = ExtResource("2_cd642")
 
 [node name="FrogAdult" parent="." instance=ExtResource("1_hs8cy")]
-position = Vector2(129, -52)
+position = Vector2(160, -82)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(160, 16)
@@ -71,11 +60,24 @@ shape = SubResource("RectangleShape2D_cyi76")
 position = Vector2(-179, -414)
 shape = SubResource("RectangleShape2D_qj2kt")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -818)
+shape = SubResource("RectangleShape2D_giqm7")
+
+[node name="TileMap2" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(1, 13)
+tile_set = SubResource("TileSet_ge6g8")
+format = 2
+layer_0/tile_data = PackedInt32Array(-196605, 0, 0, -196606, 0, 0, -196607, 0, 0, -196604, 0, 0, -196603, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -327666, 0, 0, -327662, 0, 0, -327661, 0, 0, -589819, 0, 0, -589820, 0, 0, -589821, 0, 0, -589822, 0, 0, -589823, 0, 0, -589824, 0, 0, -196608, 0, 0, -917492, 0, 0, -917491, 0, 0, -917490, 0, 0, -1179647, 0, 0, -1179646, 0, 0, -1507317, 0, 0, -1507316, 0, 0, -1507315, 0, 0, -1507314, 0, 0, -1507313, 0, 0, -1507312, 0, 0, -1507311, 0, 0, -1507310, 0, 0, -1507309, 0, 0, -1703920, 0, 0, -1703919, 0, 0, -2031606, 0, 0, -2031605, 0, 0, -2293759, 0, 0, -2228223, 0, 0, -2293760, 0, 0, -2228224, 0, 0, -2752503, 0, 0, -2752504, 0, 0, -2752502, 0, 0, -2752501, 0, 0, -2752500, 0, 0)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 0)
 
-[node name="TileMap" type="TileMap" parent="."]
-texture_filter = 1
-tile_set = SubResource("TileSet_slj5m")
-format = 2
-layer_0/tile_data = PackedInt32Array(-131071, 65536, 1, -131070, 65536, 1, -131069, 65536, 1, -131068, 65536, 1, -131067, 65536, 1, -262130, 65536, 1, -262129, 65536, 1, -262128, 65536, 1, -262127, 65536, 1, -262126, 65536, 1, -262125, 65536, 1, -524288, 65536, 1, -524287, 65536, 1, -524286, 65536, 1, -524285, 65536, 1, -524284, 65536, 1, -524283, 65536, 1, -851956, 65536, 1, -851955, 65536, 1, -851954, 65536, 1, -1114111, 65536, 1, -1114110, 65536, 1, -1441781, 65536, 1, -1441780, 65536, 1, -1441779, 65536, 1, -1441778, 65536, 1, -1441777, 65536, 1, -1441776, 65536, 1, -1441775, 65536, 1, -1441774, 65536, 1, -1441773, 65536, 1, -1966070, 65536, 1, -1966069, 65536, 1, -2228224, 0, 1, -2228223, 65536, 1, -2162687, 65536, 2, -2162688, 0, 2, -2686966, 65536, 1, -2686965, 65536, 1, -2686964, 131072, 1, -2686968, 0, 1, -2686967, 65536, 1, -1638384, 65536, 1, -1638383, 131072, 1)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(169, -667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pmbvm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

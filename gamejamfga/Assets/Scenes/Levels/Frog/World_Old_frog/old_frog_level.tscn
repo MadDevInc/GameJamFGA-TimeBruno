@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnbp7c5qrdweq"]
+[gd_scene load_steps=12 format=3 uid="uid://dnbp7c5qrdweq"]
 
-[ext_resource type="Texture2D" uid="uid://ikxq4ux173tt" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="1_jfscc"]
+[ext_resource type="Texture2D" uid="uid://btf0j4m5uxt1m" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="1_jfscc"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/World_Old_frog/old_frog_level.gd" id="1_x864m"]
-[ext_resource type="PackedScene" uid="uid://tjnwpg8tf8uk" path="res://Assets/Scenes/Levels/Frog/old_frog.tscn" id="3_u5u7h"]
-[ext_resource type="Texture2D" uid="uid://ce75rj8pcdk14" path="res://Assets/Sprites/Background/BackGroundFrog/block-0001.png" id="4_uq0lx"]
+[ext_resource type="PackedScene" uid="uid://w750we35vl3a" path="res://Assets/Scenes/Levels/Frog/old_frog.tscn" id="3_u5u7h"]
+[ext_resource type="Texture2D" uid="uid://cwryx8tqdobib" path="res://Assets/Sprites/Background/BackGroundFrog/block-0001.png" id="4_uq0lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5ia7"]
 size = Vector2(321, 15.5)
@@ -28,6 +28,9 @@ texture = ExtResource("4_uq0lx")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vq2jq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3se2"]
+size = Vector2(323, 20)
+
 [node name="Old_Frog_level" type="Node2D"]
 script = ExtResource("1_x864m")
 
@@ -44,6 +47,7 @@ position = Vector2(165, -669)
 position = Vector2(160, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_d5ia7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -66,3 +70,9 @@ texture_filter = 1
 tile_set = SubResource("TileSet_oiwqu")
 format = 2
 layer_0/tile_data = PackedInt32Array(-2228224, 0, 0, -2162687, 0, 0, -2162688, 0, 0, -1966070, 0, 0, -1638381, 0, 0, -1638382, 0, 0, -1441777, 0, 0, -1441778, 0, 0, -917504, 0, 1, -1048567, 0, 0, -1048566, 0, 0, -2031606, 0, 0, -2031607, 0, 0, -2031608, 0, 0, -1966071, 0, 0, -1966072, 0, 0, -2686964, 0, 0, -2686965, 0, 0, -2686966, 0, 0, -2686967, 0, 0, -2228223, 0, 0, -2686968, 0, 0, -458747, 0, 0, -458748, 0, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(161.5, 0)
+shape = SubResource("RectangleShape2D_g3se2")

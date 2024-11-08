@@ -1,17 +1,112 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdiacv0ogx5wn"]
+[gd_scene load_steps=13 format=3 uid="uid://dvved8in4nbke"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Frog/World/Level_Baby_Frog.gd" id="1_0getl"]
 [ext_resource type="PackedScene" uid="uid://duvx7ot7etm88" path="res://Assets/Scenes/Levels/Frog/World/layer_1_baby_frog_level.tscn" id="2_3lrwg"]
 [ext_resource type="PackedScene" uid="uid://div3qc1ol0hei" path="res://Assets/Scenes/Levels/Frog/World/layer_2_frog_level.tscn" id="3_pnf8y"]
 [ext_resource type="PackedScene" uid="uid://cdstvv6mnc2rs" path="res://Assets/Scenes/Levels/Frog/World/layer_3_baby_frog.tscn" id="4_ud8yd"]
 [ext_resource type="PackedScene" uid="uid://b2j1l0086j3xy" path="res://Assets/Scenes/Characters/Frog/frog_baby.tscn" id="5_71kfd"]
+[ext_resource type="Texture2D" uid="uid://yorlgggr4un0" path="res://Assets/Sprites/Characters/Frog/sapo-16x16.png" id="7_fefg3"]
+[ext_resource type="Texture2D" uid="uid://btf0j4m5uxt1m" path="res://Assets/Sprites/Background/BackGroundFrog/Frog/BackGround.png" id="7_ihucu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lpnf"]
 size = Vector2(25, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ndx"]
+
+[sub_resource type="Animation" id="Animation_x3aa6"]
+resource_name = "transition"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrogBaby:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(28, 95), Vector2(160, 95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ixm3s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrogBaby:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, 95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejvtr"]
+_data = {
+"RESET": SubResource("Animation_ixm3s"),
+"transition": SubResource("Animation_x3aa6")
+}
+
 [node name="Level_Baby_Frog" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_0getl")
 metadata/_edit_horizontal_guides_ = [-83.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.172549, 0.443137, 1, 1)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -25,13 +120,33 @@ speed = 0
 [node name="layer3_baby-frog" parent="." instance=ExtResource("4_ud8yd")]
 speed = 0
 
-[node name="FrogBaby" parent="." groups=["player"] instance=ExtResource("5_71kfd")]
-position = Vector2(8, 95)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(29, 185)
 shape = SubResource("RectangleShape2D_1lpnf")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(27, -10)
+shape = SubResource("RectangleShape2D_v8ndx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ejvtr")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(160, -320)
+texture = ExtResource("7_ihucu")
+
+[node name="FrogBaby" parent="." groups=["player"] instance=ExtResource("5_71kfd")]
+position = Vector2(28, 95)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(160, 90)
+texture = ExtResource("7_fefg3")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
