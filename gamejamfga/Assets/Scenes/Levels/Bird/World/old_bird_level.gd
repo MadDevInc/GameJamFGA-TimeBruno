@@ -6,7 +6,7 @@ func  _ready():
 	initial_timer()
 
 func initial_timer():
-	await get_tree().create_timer(45).timeout
+	await get_tree().create_timer(45).timeout 
 	$Timer.stop()
 	await get_tree().create_timer(10).timeout
 	$AnimationPlayer.play("transition")

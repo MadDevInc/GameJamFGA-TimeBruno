@@ -180,7 +180,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2h1x"]
-size = Vector2(64, 22)
+size = Vector2(56, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y647w"]
 size = Vector2(2, 32)
@@ -252,7 +252,7 @@ libraries = {
 position = Vector2(272, 163)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1)
+position = Vector2(4, 1)
 shape = SubResource("RectangleShape2D_c2h1x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
